@@ -120,7 +120,12 @@ NOTES:
  *   Rating: 1
  */
 int bitAnd(int x, int y) {
-  return 2;
+  /* bitAnd is complement of bitwise or of complements of input*/
+  int xComp = ~x;
+  int yComp = ~y;
+  int or = xComp | yComp;
+  int result = ~or;
+  return result;
 }
 /* 
  * bitXor - x^y using only ~ and & 
@@ -130,7 +135,15 @@ int bitAnd(int x, int y) {
  *   Rating: 1
  */
 int bitXor(int x, int y) {
-  return 2;
+  /* bitAnd is complement of bitwise or of complements of input*/
+  int xComp = ~x;
+  int yComp = ~y;
+  int and = x & y;
+  int notAnd = ~and;
+  int andComp = xComp & yComp;
+  int notAndComp = ~andComp;
+  int result = notAnd & notAndComp;
+  return result;
 }
 /* 
  * thirdBits - return word with every third bit (starting from the LSB) set to 1
