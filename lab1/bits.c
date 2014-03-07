@@ -153,7 +153,13 @@ int bitXor(int x, int y) {
  *   Rating: 1
  */
 int thirdBits(void) {
-  return 2;
+  int temp = 73 << 9;
+  temp = temp + 73;
+  temp = temp << 9;
+  temp = temp + 73;
+  temp = temp << 6;
+  int result = temp + 9;
+  return result;
 }
 // Rating: 2
 /* 
